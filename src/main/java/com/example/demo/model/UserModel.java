@@ -72,6 +72,10 @@ public class UserModel {
 		return this.sav2;
 	}
 	
+	public LocalDateTime getCreatedate() {
+		return this.createdate;
+	}
+	
 	//setter
 	
 	public void setUID(String UID) {
