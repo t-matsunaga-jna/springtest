@@ -2,26 +2,34 @@ package com.example.demo.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="payment_tipe")
+@Table(name="payment_type")
 public class PaymentTypeModel {
 	
 	@Id
+	@Column(name ="No")
 	private String No;
 	
+	@Column(name ="type1")
 	private String type1;
 	
+	@Column(name = "type2")
 	private String type2;
 	
+	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "del_Flag")
 	private boolean del_Frag;
 	
-	private LocalDateTime createData = LocalDateTime.now();
+	@Column(name = "createdate")
+	private LocalDateTime createdate;
+	
 	
 	//getter
 	
@@ -45,6 +53,10 @@ public class PaymentTypeModel {
 		return this.del_Frag;
 	}
 	
+	public String getType() {
+		return this.type1 + this.type2;
+	}
+	
 	//setter
 	
 	public void setNo(String No) {
@@ -66,5 +78,7 @@ public class PaymentTypeModel {
 	public void setDelFlag(boolean delFlag) {
 		this.del_Frag = delFlag;
 	}
+
+	
 
 }

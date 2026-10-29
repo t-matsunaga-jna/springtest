@@ -5,6 +5,43 @@
 <title>支出登録</title>
 </head>
 <body>
-
+	<form th:action="@{/submit}" th:object="${data}" method="post">
+		<div>
+			<label for="date">日付(YYYY/MM/DD)</label>
+			<input type="text" id="date" th:field="*{date}" />
+		</div>
+		<div>
+			<label for="type1">大項目</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="type1 ${type1}"
+				        value="type1.type1"
+						th:text="type1.typeName"
+				>
+				</option>
+			</select>	
+		</div>
+		<div>
+			<label for="type2">項目</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="type2 ${type2}"
+				        value="type2.type2"
+						th:text="type2.typeName"
+				>
+				</option>
+			</select>		
+		</div>
+		<div>
+			<label for="name">名前</label>
+			<input type="text" id="name" th:field="*{name}" />
+		</div>
+		<div>
+			<label for="price">金額</label>
+			<input type="text" id="price" th:field="*{price}" />
+		</div>
+		<div>
+			<button type="submit">確定</button>
+		</div>
 </body>
 </html>

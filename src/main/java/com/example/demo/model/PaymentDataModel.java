@@ -5,10 +5,14 @@ import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
+
+import com.example.demo.repository.PaymentDataKey;
 
 @Entity
 @Table(name="payment_data")
+@IdClass(value =PaymentDataKey.class)
 public class PaymentDataModel {
 	
 	@Id
@@ -29,7 +33,11 @@ public class PaymentDataModel {
 	
 	private boolean del_Flag;
 	
-	private LocalDateTime createdate = LocalDateTime.now();
+	private LocalDateTime createdate;
+	
+	private String type = type1 + type2;
+	
+	private String typeName;
 	
 	//getter
 	
@@ -65,6 +73,14 @@ public class PaymentDataModel {
 		return this.del_Flag;
 	}
 	
+	public String getType() {
+		return this.type;
+	}
+	
+	public String getTypeName() {
+		return this.typeName;
+	}
+	
 	//setter
 	
 	public void setUID(String UID) {
@@ -98,5 +114,15 @@ public class PaymentDataModel {
 	public void setDelFlag(boolean del_flag) {
 		this.del_Flag = del_flag;
 	}
+	
+	// 項目名取得
+	/*
+	@Autowired
+	private TypeRepository typerepository; 
+	
+	public void setTypeName() {
+		this.typeName = typerepository.findByType1AndType2(type1, type2).getFirst().getName();
+	}
+	*/
 
 }

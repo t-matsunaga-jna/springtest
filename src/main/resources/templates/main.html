@@ -6,9 +6,26 @@
 </head>
 <body>
 	<p th:text="${user_name}">ユーザー名</p>
-	<p th:text="${month}">当月</p>
 	
-	
+	<table>
+		<caption th:text="${month}">当月</caption>
+		<thead>
+			<tr>
+				<th>日付</th>
+				<th>項目</th>
+				<th>名称</th>
+				<th>金額</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="paydata ${pay_data}">
+				<td th:text="${paydata.date}"></td>
+				<td th:text="${paydata.type}"></td>
+				<td th:text="${paydata.message}"></td>
+				<td th:text="${paydata.price}"></td>
+			</tr>
+		</tbody>
+	</table>
 	
 	<button onclick="location.href='editData'">支出登録</button>
 	<button onclick="location.href='viewMonth'">月別支出</button>

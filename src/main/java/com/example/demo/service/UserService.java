@@ -16,7 +16,7 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	// ユーザー作成
-	public void save(String id,String password, String name) {
+	public void saveUser(String id,String password, String name) {
 		UserModel user = new UserModel();
 		user.setId(UUID.randomUUID().toString());
 		user.setId(id);
@@ -45,7 +45,7 @@ public class UserService {
 	}
 	
 	// 更新
-	public void saveUser(UserModel user) {
+	public void save(UserModel user) {
 		userRepository.save(user);
 	}
 }
