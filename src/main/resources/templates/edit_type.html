@@ -5,6 +5,25 @@
 <title>支出項目登録</title>
 </head>
 <body>
+	<form th:action="@{/submit}" th:object="${type}}" method="post">
 
+		<div>
+			<label for="type1">大項目</label>
+			<input type="text" id="type1" th:field="*{type1}" />
+		</div>
+		<div>
+			<label for="type2">項目</label>
+			<input type="text" id="type2" th:field="*{type2}" />
+		</div>
+		<div>
+			<label for="name">名前</label>
+			<input type="text" id="name" th:field="*{name}" />
+		</div>
+		<div>
+			<button type="submit">確定</button>
+		</div>
+	</form>
+	<p th:if="exe != true">登録に失敗しました</p>
+	<p th:unless="exe != true"></p>
 </body>
 </html>

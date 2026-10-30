@@ -26,7 +26,7 @@
 	<button onclick="location.href='compareData'">支出比較</button>
 	<button onclick="location.href='configUser'">ユーザー設定</button>
 	
-	<p th:if="payment_data = null">warning</p>
-	<p th:unless ="payment_data = null"></p>
+	<p th:if="pay_data == null">データが存在しません</p>
+	<p th:unless ="pay_data == null"></p>
 </body>
 </html>

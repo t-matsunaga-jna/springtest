@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -25,7 +25,7 @@ public class PaymentDataModel {
 	
 	private String type2;
 	
-	private Date date;
+	private LocalDate date;
 	
 	private String message;
 	
@@ -57,7 +57,7 @@ public class PaymentDataModel {
 		return this.type2;
 	}
 	
-	public Date getDate() {
+	public LocalDate getDate() {
 		return this.date;
 	}
 	
@@ -99,7 +99,7 @@ public class PaymentDataModel {
 		this.type2 = type2;
 	}
 	
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	

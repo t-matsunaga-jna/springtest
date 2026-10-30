@@ -7,14 +7,30 @@
 <body>
 	<p th:text="${year}">本年</p>
 	
-	
+	<table>
+		<caption>月間支出</caption>
+		<thead>
+			<tr>
+				<th>月</th>
+				<th>項目</th>
+				<th>金額</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="paydata ${pay_data}">
+				<td th:text="${paydata.date}"></td>
+				<td th:text="${paydata.type}"></td>
+				<td th:text="${paydata.price}"></td>
+			</tr>
+		</tbody>
+	</table>
 	
 	<button onclick="location.href='main'">当月支出</button>
 	<button onclick="location.href='viewYear'">年間支出</button>
 	<button onclick="location.href='compareData'">支出比較</button>
 	<button onclick="location.href='configUser'">ユーザー設定</button>
 	
-	<p th:if="payment_data = null">warning</p>
-	<p th:unless ="payment_data = null"></p>
+	<p th:if="pay_data == null">データが存在しません</p>
+	<p th:unless ="pay_data == null"></p>
 </body>
 </html>

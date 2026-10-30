@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -31,7 +30,7 @@ public class UserService {
 		return userRepository.findById(UID);
 	}
 	
-	public List<UserModel> getByIdPass(String id,String pass) {
+	public Optional<UserModel> getByIdPass(String id,String pass) {
 		return userRepository.findByIdAndPassword(id, pass);
 	}
 	

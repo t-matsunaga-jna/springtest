@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.PaymentDataModel;
 
 @Repository
-public interface DataRepository extends JpaRepository<PaymentDataModel,String>{
-	List<PaymentDataModel>findByUID(String UID);
+public interface DataRepository extends JpaRepository<PaymentDataModel,PaymentDataKey>{
+	List<PaymentDataModel>findByUIDOrderByDate(String UID);
+	
+	List<PaymentDataModel>findByUIDOrderByType1AndType2(String UID);
 }

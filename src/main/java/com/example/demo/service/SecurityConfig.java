@@ -44,7 +44,7 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authz -> authz
-            		.requestMatchers("/edittype")
+            		.requestMatchers("/editType")
             		.hasAnyRole("admin")
             		.requestMatchers("/")
             		.hasAnyRole("user","admin")
@@ -60,7 +60,7 @@ public class SecurityConfig {
                 .frameOptions(frameOptions -> frameOptions.sameOrigin()))          
             .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/", true)
+                .defaultSuccessUrl("/main", true)
                 .failureUrl("/login?error") 
                 .permitAll()
             )
