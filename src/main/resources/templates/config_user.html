@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ユーザー設定</title>
+</head>
+<body>
+	<form th:action="@{/submit}" th:object="${user}" method="post">
+		<div>
+			<label for="name">名前</label>
+			<input type="text" id="name" th:field="*{name}" />
+		</div>
+		<div>
+			<label for="income">収入(万)</label>
+			<input type="text" id="income" th:field="*{income}" />
+		</div>
+		<div>
+			<label for="inv1">投資項目1</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="typedata ${type_data}"
+				        value="typedata.type"
+						th:text="typedata.typeName"
+				>
+				</option>
+			</select>
+			
+		</div>
+		<div>
+			<label for="inv1">投資項目2</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="typedata ${type_data}"
+				        value="typedata.type"
+						th:text="typedata.typeName"
+				>
+				</option>
+			</select>	
+		</div>
+		<div>
+			<label for="inv1">節約項目1</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="typedata ${type_data}"
+				        value="typedata.type"
+						th:text="typedata.typeName"
+				>
+				</option>
+			</select>
+		</div>
+		<div>
+			<label for="inv1">節約項目2</label>
+			<select>
+				<option value="" selected>選択してください</option>
+				<option th:each="typedata ${type_data}"
+				        value="typedata.type"
+						th:text="typedata.typeName"
+				>
+				</option>
+			</select>
+		</div>
+		<div>
+			<button type="submit">確定</button>
+		</div>
+	</form>
+	
+	<button onclick="location.href='main'">戻る</button>
+	
+	<p th:if="exe != true">登録に失敗しました</p>
+	<p th:unless=""></p>
+</body>
+</html>

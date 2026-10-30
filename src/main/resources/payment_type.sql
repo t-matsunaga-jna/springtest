@@ -1,0 +1,8 @@
+CREATE TABLE payment_type (
+	No VARCHAR(8) PRIMARY KEY,
+	type1 VARCHAR(4),
+	type2 VARCHAR(4),
+	name  VARCHAR(16),
+	del_flg BOOLEAN,
+	createdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

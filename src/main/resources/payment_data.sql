@@ -1,0 +1,12 @@
+CREATE TABLE payment_data (
+	UID VARCHAR(32) PRIMARY KEY,
+	No  VARCHAR(8)  PRIMARY KEY,
+	type1 VARCHAR(4),
+	type2 VARCHAR(4),
+	date DATE,
+	message VARCHAR(32),
+	price int,
+	del_flg BOOLEAN,
+	createdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	PRIMARY KEY (UID, No)
+);

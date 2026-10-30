@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>支出比較</title>
+</head>
+<body>
+	<p>あなたの収入</p>
+	<p th:text="${income}"></p>
+	
+	<p>今月の支出</p>
+	<p th:text="${out}"></p>
+	
+	<p>同収入帯の人の支出</p>
+	<p th:text="${outOther}"></p>
+	
+	<p>今月の投資項目1の支出</p>
+	<p th:text="${outInv1}"></p>
+	
+	<p>同収入帯の人の投資項目1の支出</p>
+	<p th:text="${outOtherInv1}"></p>
+	
+	<p>今月の投資項目2の支出</p>
+	<p th:text="${outinv2}"></p>
+	
+	<p>同収入帯の人の投資項目2の支出</p>
+	<p th:text="${outOtherInv2}"></p>
+	
+	<p>今月の節約項目1の支出</p>
+	<p th:text="${outSav1}"></p>
+	
+	<p>同収入帯の人の節約項目1の支出</p>
+	<p th:text="${outOtherSav1}"></p>
+	
+	<p>今月の節約項目1の支出</p>
+	<p th:text="${outSav2}"></p>
+	
+	<p>同収入帯の人の節約項目1の支出</p>
+	<p th:text="${outOtherSav2}"></p>
+	
+	<button onclick="location.href='main'">当月支出</button>
+	<button onclick="location.href='viewMonth'">月別支出</button>
+	<button onclick="location.href='viewYear'">年間支出</button>
+	<button onclick="location.href='configUser'">ユーザー設定</button>
+	
+	<p th:if="income == null">データが存在しません</p>
+	<p th:unless ="income == null"></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ユーザー登録</title>
+</head>
+<body>
+	<form th:action="@{/submit}" th:object="${user}" method="post">
+		<div>
+			<label for="id">ID</label>
+			<input type="text" id="id" th:field="*{id}" />
+		</div>
+		<div>
+			<label for="password">パスワード</label>
+			<input type="text" id="password" th:field="*{password}" />
+		</div>
+		<div>
+			<label for="name">名前</label>
+			<input type="text" id="name" th:field="*{name}" />
+		</div>
+		<div>
+			<label for="income">収入(万)</label>
+			<input type="text" id="income" th:field="*{income}" />
+		</div>
+		<div>
+			<button type="submit">確定</button>
+		</div>
+	</form>
+	
+	<button onclick="location.href='login'">戻る</button>
+	
+	<p th:if="exe != true">登録に失敗しました</p>
+	<p th:unless=""></p>
+</body>
+</html>
